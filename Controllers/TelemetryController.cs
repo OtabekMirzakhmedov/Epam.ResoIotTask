@@ -26,5 +26,14 @@ namespace Epam.ResoIotTask.Controllers
 
             return Ok();
         }
+
+        [HttpGet("{deviceId}/telemetry")]
+        public async Task<IActionResult> GetTelemetryData(int deviceId)
+        {
+
+            var telemeteryData = await _telemetryService.ShowStatistics(deviceId);
+
+            return Ok(telemeteryData);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -16,7 +17,7 @@ namespace Epam.ResoIotTask.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DeviceId = table.Column<int>(type: "int", nullable: false),
                     Illuminance = table.Column<double>(type: "float", nullable: false),
-                    TimeStamp = table.Column<long>(type: "bigint", nullable: false)
+                    TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -8,6 +8,6 @@ namespace Epam.ResoIotTask.Models
         public int Id { get; set; }
         public int DeviceId { get; set; }
         public double Illuminance { get; set; }
-        public long TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

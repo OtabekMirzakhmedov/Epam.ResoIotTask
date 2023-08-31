@@ -1,5 +1,6 @@
 using Epam.ResoIotTask.Data;
 using Epam.ResoIotTask.Services;
+using Epam.ResoIotTask.Validations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<TelemetryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TaskConnection")));
 
 builder.Services.AddScoped<ITelemetryService, TelemetryService>();
+builder.Services.AddScoped<ITelemetryDataValidator, TelemetryDataValidator>();
 
 var app = builder.Build();
 
